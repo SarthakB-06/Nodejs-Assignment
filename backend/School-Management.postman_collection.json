@@ -1,0 +1,66 @@
+{
+    "info": {
+        "name": "School Management APIs",
+        "description": "APIs to add schools and list them sorted by proximity",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Add School",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n  \"name\": \"Green Valley High\",\n  \"address\": \"123 Park Lane\",\n  \"latitude\": 28.5355,\n  \"longitude\": 77.3910\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:3000/addSchool",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "addSchool"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "List Schools Near Me",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:3000/listSchools?latitude=28.5&longitude=77.4",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "3000",
+                    "path": [
+                        "listSchools"
+                    ],
+                    "query": [
+                        {
+                            "key": "latitude",
+                            "value": "28.5"
+                        },
+                        {
+                            "key": "longitude",
+                            "value": "77.4"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        }
+    ]
+}
